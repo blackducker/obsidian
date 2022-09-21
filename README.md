@@ -25,7 +25,7 @@
 - System domain
 - Page fault
 - VMID
-- Backup – cache and cache coherency
+- **Backup – cache and cache coherency**
 [T.B.D]
 
 - GEM
