@@ -12,7 +12,9 @@
 - 个人
 - 测试反馈
   
-### 工作范围`仅包含kernel部分，涉及opengl需要确认其中kernel的部分`
+### 工作范围
+- 仅包含kernel部分，涉及opengl需要确认其中kernel的部分
+
 #### install
 - driver
 #### kernel

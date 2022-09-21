@@ -26,7 +26,6 @@
 - Page fault
 - VMID
 - Backup – cache and cache coherency
-[T.B.D]
 
 - GEM
 - GPU/CPU Cache Coherency
@@ -50,10 +49,14 @@
 - vfio and immmu
 - p2p and rdma
 
+## Note Work Flow
 
+This is my note's work flow
 
+It includes obsidian + github + docsify + confluence + OneDrive
 
+project docsify
 
-
-
-
+local  obsidian -> markdown file(temp) - -> markdown file(last)
+                                              |                                        |
+cloud    github.dev     remote private            gitpage or confluence
