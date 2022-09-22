@@ -6,6 +6,12 @@
 2. 永久笔记 (Permanent Note)
 3. 项目笔记 (Project Note)
 
+## Note Style
+
+README -> MOC
+
+markdown file -> 反向链接索引
+
 ## Note Work Flow
 
 This is my note's work flow
