@@ -1,12 +1,10 @@
-## Note Meaning
-
+Note Meaning
 
 ## Note Type
 
 1. 闪念笔记 (Fleeting Note)
 2. 永久笔记 (Permanent Note)
 3. 项目笔记 (Project Note)
-
 
 ## Note Work Flow
 
