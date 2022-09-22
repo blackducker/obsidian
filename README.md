@@ -1,4 +1,4 @@
-Note Meaning
+## Note Meaning
 
 ## Note Type
 
@@ -14,6 +14,6 @@ It includes obsidian + github + docsify + confluence + OneDrive
 
 project docsify
 
-local  obsidian -> markdown file(temp) - -> markdown file(last)
-                                              |                                        |
-cloud    github.dev     remote private            gitpage or confluence
+local  obsidian or vscode -> markdown file(temp) - -> markdown file(last)
+                                    		          |                                        |
+cloud    github.dev    		 remote private            gitpage or confluence
