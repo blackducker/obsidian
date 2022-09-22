@@ -25,6 +25,5 @@
 #### gfx_v10_0_hw_init
 ##### gfx_v10_0_constants_init
 ##### gfx_v10_0_rlc_resume
-- `TBD`gfx_v10_0_rlc_load_microcode ->  WREG32_SOC15(fw_data++)
-##### gfx_v10_0_cp_resume
-- `TBD`
+- gfx_v10_0_rlc_load_microcode ->  WREG32_SOC15(fw_data++) `TBD`
+##### gfx_v10_0_cp_resume `TBD`
