@@ -11,7 +11,7 @@
 
 - amdgpu_ib_schedule
 - HQD Registers
-- MCBP
+- [[MCBP]]
 - MES
 - TDR
 
@@ -35,16 +35,16 @@
 - IOMMU
 - TTM
 
-## Linux Graphic Driver for SRIOV Virtualization
+## SRIOV Virtualization
 
 ## GPU IPs
 
 - common
 - gmc
 - ih
-- psp
+- [[psp]]
 - smu
-- gfx
+- [[gfx]]
 - rdma
 
 ## SMU and Power Management
@@ -53,3 +53,4 @@
 
 - vfio and immmu
 - p2p and rdma
+- [[VBIOS]]
