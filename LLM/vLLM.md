@@ -1,0 +1,1 @@
+vLLM 是一个 LLM (Large Lanuage Model) 推理和部署服务库，它结合 iterative-level schedule (常被称为 continuous batching，该调度算法在 [Orca](https://link.zhihu.com/?target=https%3A//www.usenix.org/system/files/osdi22-yu.pdf) 中首次被提出) 和 PagedAttention 注意力算法以提高服务的吞吐量。
