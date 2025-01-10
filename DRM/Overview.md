@@ -66,6 +66,132 @@ TTM的主要概念是BO，即在某些时刻GPU是可寻址的视频内存。当
 
 ==为了解决这些问题，将模式设置代码移至内核中的单个位置，放到了现有的DRM模块中。==然后每个进程（包括X Server）都应该能够命令内核执行模式设置操作，并且内核将确保并发操作不会导致不一致的状态。添加到DRM模块以执行这些模式设置操作的新内核API和代码称为Kernel Mode-Setting(KMS)。
 
+
+Kernel Mode-Setting(KMS)有几个好处。最直接是从内核（Linux控制台，fbdev）和用户空间（X Server DDX驱动程序）中删除重复的模式设置代码。KMS还使编写替代图形系统变得更加容易，而这些图形系统现在不需要实现自己的模式设置代码。通过提供集中的模式管理，KMS解决了在控制台和X之间以及X的不同实例之间切换引起的闪屏问题。由于它在内核中可用，因此也可以在引导过程开始时使用它，从而避免了由于这些早期阶段的模式更改而导致的闪烁。
+
+为避免破坏DRM API的向后兼容性，内核模式设置作为某些DRM驱动程序的附件驱动程序功能提供。**任何DRM驱动程序在向DRM内核注册时都可以选择提供DRIVER_MODESET标志，以指示它支持KMS API**。那些实现内核模式设置的驱动程序通常被称为KMS驱动程序，以将它们与传统的（无KMS）DRM驱动。
+
+
+### 2.9 Render nodes
+
+         在原始DRM API中，DRM设备“/dev/dri/cardX”用于特权（模式设置，其他显示控件）和非特权（渲染，GPGPU计算）操作。 出于安全原因，打开关联的DRM设备文件需要“等同于root特权”的特殊特权。这导致了一种体系结构，其中只有一些可靠的用户空间程序（X服务器，图形合成器等）可以完全访问DRM API，包括特权部分（如模式集API）。 想要渲染或进行GPGPU计算的其余用户空间应用程序应由DRM设备的所有者（“DRM主设备”）通过使用特殊的身份验证界面来授予。然后，经过身份验证的应用程序可以使用DRM API的受限版本来呈现或进行计算，而无需特权操作。这种设计施加了严格的约束：必须始终有运行中的图形服务器（X服务器，Wayland合成器，...）充当DRM设备的DRM主设备，以便可以授予其他用户空间程序使用DRM设备的权限，即使在不涉及任何图形显示（如GPGPU计算）的情况下。
+
+         “渲染节点（Render nodes）”概念试图通过将DRM用户空间API分成两个接口（一个特权和一个非特权）并为每个接口使用单独的设备文件（或“节点”）来解决这些情况。对于找到的每个GPU，其对应的DRM驱动程序（如果它支持渲染节点功能）除了主节点/dev /dri/cardX之外，还会创建一个设备文件/dev/dri/renderDX，称为渲染节点。使用直接渲染模型的客户端和想要利用GPU的计算功能的应用程序可以通过简单地打开任何现有的渲染节点并使用DRM API支持的有限子集来分派GPU操作，而无需其他特权即可做到这一点--前提是它们具有打开设备文件的文件系统权限。 显示服务器，合成器和任何其他请求模式API或任何其他特权操作的程序，都必须打开授予对完整DRM API的访问权限的标准主节点，并像往常一样使用它。渲染节点显式禁止GEM flink操作，以防止使用不安全的GEM全局名称共享缓冲区。 只能通过使用PRIME（DMA-BUF）文件描述符的方式，与包括图形服务器在内的另一个客户端共享缓冲区。
+
+范例
+``` C
+#include <errno.h>
+#include <fcntl.h>
+#include <stdbool.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/mman.h>
+#include <time.h>
+#include <unistd.h>
+#include "xf86drm.h"
+#include "xf86drmMode.h"
+ 
+#define uint32_t unsigned int 
+ 
+struct framebuffer{
+	uint32_t size;
+	uint32_t handle;	
+	uint32_t fb_id;
+	uint32_t *vaddr;	
+};
+ 
+static void create_fb(int fd,uint32_t width, uint32_t height, uint32_t color ,struct framebuffer *buf)
+{
+	struct drm_mode_create_dumb create = {};
+ 	struct drm_mode_map_dumb map = {};
+	uint32_t i;
+	uint32_t fb_id;
+ 
+	create.width = width;
+	create.height = height;
+	create.bpp = 32;
+	drmIoctl(fd, DRM_IOCTL_MODE_CREATE_DUMB, &create);	//创建显存,返回一个handle
+ 
+	drmModeAddFB(fd, create.width, create.height, 24, 32, create.pitch,create.handle, &fb_id); 
+	
+	map.handle = create.handle;
+	drmIoctl(fd, DRM_IOCTL_MODE_MAP_DUMB, &map);	//显存绑定fd，并根据handle返回offset
+ 
+	//通过offset找到对应的显存(framebuffer)并映射到用户空间
+	uint32_t *vaddr = mmap(0, create.size, PROT_READ | PROT_WRITE,MAP_SHARED, fd, map.offset);	
+ 
+	for (i = 0; i < (create.size / 4); i++)
+		vaddr[i] = color;
+ 
+	buf->vaddr=vaddr;
+	buf->handle=create.handle;
+	buf->size=create.size;
+	buf->fb_id=fb_id;
+ 
+	return;
+}
+ 
+static void release_fb(int fd, struct framebuffer *buf)
+{
+	struct drm_mode_destroy_dumb destroy = {};
+	destroy.handle = buf->handle;
+ 
+	drmModeRmFB(fd, buf->fb_id);
+	munmap(buf->vaddr, buf->size);
+	drmIoctl(fd, DRM_IOCTL_MODE_DESTROY_DUMB, &destroy);
+}
+ 
+int main(int argc, char **argv)
+{
+	int fd;
+	struct framebuffer buf[3];
+	drmModeConnector *connector;
+	drmModeRes *resources;
+	uint32_t conn_id;
+	uint32_t crtc_id;
+ 
+ 
+	fd = open("/dev/dri/card0", O_RDWR | O_CLOEXEC);	//打开card0，card0一般绑定HDMI和LVDS
+ 
+	resources = drmModeGetResources(fd);	//获取drmModeRes资源,包含fb、crtc、encoder、connector等
+	
+	crtc_id = resources->crtcs[0];			//获取crtc id
+	conn_id = resources->connectors[0];		//获取connector id
+ 
+	connector = drmModeGetConnector(fd, conn_id);	//根据connector_id获取connector资源
+ 
+	printf("hdisplay:%d vdisplay:%d\n",connector->modes[0].hdisplay,connector->modes[0].vdisplay);
+ 
+	create_fb(fd,connector->modes[0].hdisplay,connector->modes[0].vdisplay, 0xff0000, &buf[0]);	//创建显存和上色
+	create_fb(fd,connector->modes[0].hdisplay,connector->modes[0].vdisplay, 0x00ff00, &buf[1]);	
+	create_fb(fd,connector->modes[0].hdisplay,connector->modes[0].vdisplay, 0x0000ff, &buf[2]);	
+ 
+	drmModeSetCrtc(fd, crtc_id, buf[0].fb_id,	
+			0, 0, &conn_id, 1, &connector->modes[0]);	//初始化和设置crtc，对应显存立即刷新
+	sleep(5);
+ 
+	drmModeSetCrtc(fd, crtc_id, buf[1].fb_id,
+		0, 0, &conn_id, 1, &connector->modes[0]);
+	sleep(5);
+ 
+	drmModeSetCrtc(fd, crtc_id, buf[2].fb_id,
+		0, 0, &conn_id, 1, &connector->modes[0]);
+	sleep(5);
+ 
+	release_fb(fd, &buf[0]);
+	release_fb(fd, &buf[1]);
+	release_fb(fd, &buf[2]);
+ 
+	drmModeFreeConnector(connector);
+	drmModeFreeResources(resources);
+ 
+	close(fd);
+ 
+	return 0;
+```
+
 # 引用
 https://blog.csdn.net/yangguoyu8023/article/details/129241987?spm=1001.2014.3001.5501
 
