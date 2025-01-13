@@ -1,9 +1,9 @@
 # Project information
 site_name: bob
-site_url: https://www.hello-algo.com/
+site_url: https://www.luffy.click/
 site_author: Bob zhou
 site_description: >-
-  Bob zhou'S Blog
+  Bob'S Blog
 docs_dir: docs
 site_dir: site
 # Repository
@@ -13,7 +13,7 @@ edit_uri: tree/main/docs
 version: 1.2.0
 
 # Copyright
-copyright: Copyright &copy; 2024 bobzhou<br>The website content is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>
+copyright: Copyright &copy; 2025 ~ now |  🚀 Bob Zhou
 
 # Configuration
 theme:
