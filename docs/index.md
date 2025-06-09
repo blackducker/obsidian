@@ -78,3 +78,10 @@ mkdocs继承了python的极简，非常符合我的需求，只需要两个文�
     struct amdgpu_umc       umc;
 ```
 
+友情链接
+[ML system 入坑指南](https://fazzie-key.cool/2023/02/21/MLsys/)
+[德普王](https://depp.wang/)
+[现代C++教程](https://changkun.de/modern-cpp/zh-cn/01-intro/)
+**[Linux主线内核跟踪](https://gitee.com/Kenneth-Lee-2012/MySummary/tree/master/Linux%E4%B8%BB%E7%BA%BF%E5%86%85%E6%A0%B8%E8%B7%9F%E8%B8%AA)** 
+[软件架构设计](https://www.zhihu.com/column/kls-software-arch-world)
+
