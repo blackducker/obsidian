@@ -100,6 +100,7 @@ extra_javascript:
 # Plugins
 plugins:
   - search
+  - mermaid2
   - glightbox:
       touchNavigation: true
       loop: false
@@ -131,8 +132,11 @@ markdown_extensions:
   # - pymdownx.emoji:
   #     emoji_index: !!python/name:materialx.emoji.twemoji
   #     emoji_generator: !!python/name:materialx.emoji.to_svg
-  - pymdownx.highlight:
-      anchor_linenums: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name : mermaid
+          class : mermaid
+          format: !!python/name:mermaid2.fence_mermaid_custom
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
@@ -150,12 +154,12 @@ markdown_extensions:
   - pymdownx.tilde
 
 extra_javascript:
-  - javascripts/mathjax.js
+  #- javascripts/mathjax.js
   - https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js
   # - javascripts/katex.js 
   # - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js  
   # - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js
 
-extra_css:
-  - stylesheets/extra.css
-  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
+    #extra_css:
+    #- stylesheets/extra.css
+    #- https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
