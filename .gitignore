@@ -18,3 +18,6 @@ _book
 
 # Obsidian
 .obsidian
+
+# python venv
+.venv
