@@ -28,7 +28,7 @@ prefix : `Ctrl + w` 为前缀
 ## The Ultimate vimrc
 
 - 目录树(NERD_tree插件)
-	- ,nn --打开目录树
+	- ,nn --打开目录树git
 	- ,nn --关闭目录树
 
 - 全局搜索字段(ack插件)
@@ -44,4 +44,5 @@ ctags -R .
 
 ## sccope
 
+SrcExpl‌
 
