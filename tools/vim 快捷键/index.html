@@ -12,28 +12,28 @@
         <meta name="author" content="Bob zhou">
       
       
-        <link rel="canonical" href="https://www.luffy.click/Linux/DRM/Mutter%E7%AA%97%E5%8F%A3%E7%AE%A1%E7%90%86%E5%99%A8%E5%AE%9E%E7%8E%B0%E5%88%86%E6%9E%90/">
+        <link rel="canonical" href="https://www.luffy.click/tools/vim%20%E5%BF%AB%E6%8D%B7%E9%94%AE/">
       
       
-        <link rel="prev" href="../DRM%20PRIME%20%E7%BC%93%E5%86%B2%E5%8C%BA%E5%85%B1%E4%BA%AB/">
+        <link rel="prev" href="../tmux/">
       
       
-        <link rel="next" href="../Overview/">
+        <link rel="next" href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/AI%E7%BC%96%E8%AF%91%E5%99%A8%20%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97/">
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
     
     
       
-        <title>Mutter窗口管理器实现分析 - bob</title>
+        <title>Vim 快捷键 - bob</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.6f8fc17f.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6f8fc17f.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -52,18 +52,14 @@
       
     
     
-      <link rel="stylesheet" href="../../../stylesheets/extra.css">
-    
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
-    
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
     
-   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
     .gslide-title { margin-top: 0px; user-select: text; }
     .gslide-desc { color: #666; user-select: text; }
@@ -72,7 +68,7 @@
     .gdesc-inner { font-size: 0.75rem; }
     body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
     body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -90,6 +86,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -102,7 +103,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../.." title="bob" class="md-header__button md-logo" aria-label="bob" data-md-component="logo">
+    <a href="../.." title="bob" class="md-header__button md-logo" aria-label="bob" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
@@ -127,7 +128,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Mutter窗口管理器实现分析
+              Vim 快捷键
             
           </span>
         </div>
@@ -235,7 +236,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
     
@@ -250,33 +251,11 @@
         
   
   
-    
-  
-  
-    
-    
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../KUnit/" class="md-tabs__link">
-          
-  
-    
-  
-  Linux
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
   
     
     
       <li class="md-tabs__item">
-        <a href="../../../ROCm/ROCm%E5%88%86%E6%9E%90/" class="md-tabs__link">
+        <a href="../../ROCm/ROCm%E5%88%86%E6%9E%90/" class="md-tabs__link">
           
   
     
@@ -296,27 +275,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../WeekReport/2025-W24/" class="md-tabs__link">
-          
-  
-    
-  
-  WeekReport
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../../kernel%20release/Linux_6.14/" class="md-tabs__link">
+        <a href="../../kernel%20release/Linux_6.14/" class="md-tabs__link">
           
   
     
@@ -332,11 +291,33 @@
         
   
   
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../shell/" class="md-tabs__link">
+          
+  
+    
+  
+  Tools
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
   
     
     
       <li class="md-tabs__item">
-        <a href="../../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/AI%E7%BC%96%E8%AF%91%E5%99%A8%20%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97/" class="md-tabs__link">
+        <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/AI%E7%BC%96%E8%AF%91%E5%99%A8%20%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97/" class="md-tabs__link">
           
   
     
@@ -377,7 +358,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="bob" class="md-nav__button md-logo" aria-label="bob" data-md-component="logo">
+    <a href="../.." title="bob" class="md-nav__button md-logo" aria-label="bob" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
@@ -412,7 +393,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -429,973 +410,6 @@
       
   
   
-    
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-      
-        
-        
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
-            
-  
-  <span class="md-ellipsis">
-    Linux
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2">
-            <span class="md-nav__icon md-icon"></span>
-            Linux
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../KUnit/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    KUnit
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../Resize%20Bar/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Resize Bar
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../dma-buf/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Dma buf
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../linux%20modules%20%E7%BC%96%E8%AF%91/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Linux modules 编译
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../shell/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Shell
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../%E5%86%85%E6%A0%B8pcie%E8%AE%BE%E5%A4%87%E5%87%BD%E6%95%B0/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    内核pcie设备函数
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../%E7%BB%88%E7%AB%AF%E5%BF%AB%E6%8D%B7%E9%94%AE/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    终端快捷键
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    DRM
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2_8">
-            <span class="md-nav__icon md-icon"></span>
-            DRM
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../0.%20drm-intro/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    0. drm intro
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../1.1%20drm-kms/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    1.1 drm kms
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../1.2%20drm-Atomic-KMS/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    1.2 drm Atomic KMS
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../1.3%20drm-howto/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    DRM用户接口示例
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2.1%20drm-gem/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    GEM
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2.2%20drm-gem-prime/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    drm: base prime/dma-buf support
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2.3%20dma-buf/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    2.3 dma buf
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2.4%20vgem/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    2.4 vgem
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2.5.1%20drm-mm/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    2.5.1 drm mm
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2.5.2%20drm-buddy/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    2.5.2 drm buddy
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../2.6%20ttm_pool/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    2.6 ttm pool
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../3.1%20DRM%20Sync%20Objects/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    3.1 DRM Sync Objects
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../3.2%20drm-fence/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    3.2 drm fence
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../3.3%20drm-sched/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    3.3 drm sched
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../DRM%20PRIME%20%E7%BC%93%E5%86%B2%E5%8C%BA%E5%85%B1%E4%BA%AB/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    DRM PRIME 缓冲区共享
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    Mutter窗口管理器实现分析
-  </span>
-  
-
-      </a>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Overview/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Overview
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../%E4%BB%8Emesa%E8%AE%BF%E9%97%AEgpu%E7%9A%84%E8%BF%87%E7%A8%8B/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    从mesa访问gpu的过程
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" >
-        
-          
-          <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    KMD
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_9">
-            <span class="md-nav__icon md-icon"></span>
-            KMD
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../KMD/1.%20intel%20gpu%E5%88%86%E9%85%8D%E6%98%BE%E5%AD%98%E5%92%8C%E6%98%A0%E5%B0%84/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    1. intel gpu分配显存和映射
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../KMD/2.%20kfd%20read/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    2. kfd read
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../KMD/DRM-KMS/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    DRM KMS
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../KMD/GEM/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    GEM
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../KMD/GPU%20PAGE%20FAULT/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    GPU PAGE FAULT
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../KMD/GPU%E8%BF%9B%E7%A8%8B/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    GPU进程
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../KMD/GTT%20domain%20for%20gart%20memory/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    GTT domain for gart memory
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../KMD/intel%20drm%20memory%20management/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Intel drm memory management
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../KMD/intel%20vgpu%E7%9A%84mdev%E5%AE%9E%E7%8E%B0/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Intel vgpu的mdev实现
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../KMD/iommu%E5%A6%82%E4%BD%95%E5%9C%A8%E8%99%9A%E6%8B%9F%E5%8C%96%E9%97%AE%E9%A2%98%E4%B8%AD%E5%AE%9E%E7%8E%B0%E5%9C%B0%E5%9D%80%E6%98%A0%E5%B0%84/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Iommu如何在虚拟化问题中实现地址映射
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
   
   
     
@@ -1419,10 +433,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1433,8 +447,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             ROCm
           </label>
@@ -1447,7 +461,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ROCm/ROCm%E5%88%86%E6%9E%90/" class="md-nav__link">
+      <a href="../../ROCm/ROCm%E5%88%86%E6%9E%90/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1468,7 +482,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ROCm/WSL%20torch%E5%BC%95%E7%94%A8/" class="md-nav__link">
+      <a href="../../ROCm/WSL%20torch%E5%BC%95%E7%94%A8/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1489,7 +503,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ROCm/gemm/" class="md-nav__link">
+      <a href="../../ROCm/gemm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1510,7 +524,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ROCm/vLLM/" class="md-nav__link">
+      <a href="../../ROCm/vLLM/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1542,76 +556,6 @@
       
         
       
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    WeekReport
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4">
-            <span class="md-nav__icon md-icon"></span>
-            WeekReport
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../WeekReport/2025-W24/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    2025 W24
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-      
         
       
     
@@ -1624,10 +568,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1638,8 +582,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Kernel release
           </label>
@@ -1652,7 +596,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../kernel%20release/Linux_6.14/" class="md-nav__link">
+      <a href="../../kernel%20release/Linux_6.14/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1673,7 +617,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../kernel%20release/Linux_6.15/" class="md-nav__link">
+      <a href="../../kernel%20release/Linux_6.15/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1698,6 +642,223 @@
       
   
   
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Tools
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shell/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Shell
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tmux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tmux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Vim 快捷键
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Vim 快捷键
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      快速学习推荐
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="快速学习推荐">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1&gt; 分屏快捷键
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2&gt; 文本处理
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vim-ctags-cscope" class="md-nav__link">
+    <span class="md-ellipsis">
+      vim 代码分析工具 ctags cscope
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ctags" class="md-nav__link">
+    <span class="md-ellipsis">
+      ctags
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sccope" class="md-nav__link">
+    <span class="md-ellipsis">
+      sccope
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
   
   
     
@@ -1719,10 +880,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1733,8 +894,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             读书笔记
           </label>
@@ -1747,7 +908,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/AI%E7%BC%96%E8%AF%91%E5%99%A8%20%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97/" class="md-nav__link">
+      <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/AI%E7%BC%96%E8%AF%91%E5%99%A8%20%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1768,7 +929,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/QEMU%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90%E4%B8%8E%E5%BA%94%E7%94%A8/" class="md-nav__link">
+      <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/QEMU%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90%E4%B8%8E%E5%BA%94%E7%94%A8/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1789,11 +950,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E7%B2%BE%E8%AF%BB%20%E3%80%8A%E5%A5%94%E8%B7%91linux%E5%86%85%E6%A0%B8%E3%80%8B/" class="md-nav__link">
+      <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E7%B2%BE%E8%AF%BB%20%E3%80%8A%E5%A5%94%E8%B7%91linux%E5%86%85%E6%A0%B8%E3%80%8B/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    精读 《奔跑linux内核》
+    第一章
   </span>
   
 
@@ -1828,6 +989,74 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      快速学习推荐
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="快速学习推荐">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1&gt; 分屏快捷键
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2&gt; 文本处理
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vim-ctags-cscope" class="md-nav__link">
+    <span class="md-ellipsis">
+      vim 代码分析工具 ctags cscope
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ctags" class="md-nav__link">
+    <span class="md-ellipsis">
+      ctags
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sccope" class="md-nav__link">
+    <span class="md-ellipsis">
+      sccope
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1841,7 +1070,7 @@
                   
 
   
-    <a href="https://github.com/blackducker/obsidian/tree/main/docs/Linux/DRM/Mutter窗口管理器实现分析.md" title="编辑此页" class="md-content__button md-icon">
+    <a href="https://github.com/blackducker/obsidian/tree/main/docs/tools/vim 快捷键.md" title="编辑此页" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M441 58.9 453.1 71c9.4 9.4 9.4 24.6 0 33.9L424 134.1 377.9 88 407 58.9c9.4-9.4 24.6-9.4 33.9 0zM209.8 256.2 344 121.9l46.1 46.1-134.3 134.2c-2.9 2.9-6.5 5-10.4 6.1L186.9 325l16.7-58.5c1.1-3.9 3.2-7.5 6.1-10.4zM373.1 25 175.8 222.2c-8.7 8.7-15 19.4-18.3 31.1l-28.6 100c-2.4 8.4-.1 17.4 6.1 23.6s15.2 8.5 23.6 6.1l100-28.6c11.8-3.4 22.5-9.7 31.1-18.3L487 138.9c28.1-28.1 28.1-73.7 0-101.8L474.9 25c-28.1-28.1-73.7-28.1-101.8 0M88 64c-48.6 0-88 39.4-88 88v272c0 48.6 39.4 88 88 88h272c48.6 0 88-39.4 88-88V312c0-13.3-10.7-24-24-24s-24 10.7-24 24v112c0 22.1-17.9 40-40 40H88c-22.1 0-40-17.9-40-40V152c0-22.1 17.9-40 40-40h112c13.3 0 24-10.7 24-24s-10.7-24-24-24z"/></svg>
     </a>
@@ -1849,9 +1078,79 @@
   
 
 
-  <h1>Mutter窗口管理器实现分析</h1>
+  <h1>Vim 快捷键</h1>
 
-
+<p>https://github.com/chloneda/vim-cheatsheet</p>
+<h2 id="_1">快速学习推荐<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="1">1&gt; 分屏快捷键<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<p>prefix : <code>Ctrl + w</code> 为前缀</p>
+<ol>
+<li>窗口分屏, <code>prefix + s / v</code> , 水平 /垂直</li>
+<li>窗口切换 <code>prefix + hjkl</code> , 左下上右</li>
+<li>窗口切换 <code>prefix + HJKL</code> , 左下上右</li>
+<li>窗口关闭 <code>prefix + c</code></li>
+</ol>
+<h3 id="2">2&gt; 文本处理<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<ol>
+<li>移动文本
+<code>:[range]m{address}</code></li>
+<li>粘贴文本 
+<code>:[range]co{address}</code></li>
+<li>查找修改文本
+<code>:[range]s/{pattern}/{string}/[flags]</code></li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>[range]取值</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.</td>
+<td>当前行</td>
+</tr>
+<tr>
+<td>N</td>
+<td>第N行</td>
+</tr>
+<tr>
+<td>1,10</td>
+<td>第 1~10 行</td>
+</tr>
+<tr>
+<td>%</td>
+<td>所有行</td>
+</tr>
+<tr>
+<td>## The Ultimate vimrc</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p>目录树(NERD_tree插件)</p>
+<ul>
+<li>,nn --打开目录树</li>
+<li>,nn --关闭目录树</li>
+</ul>
+</li>
+<li>
+<p>全局搜索字段(ack插件)</p>
+<ul>
+<li>,g --打开全局字段搜索面板，默认大小写敏感，-i 不区分大小写，-w 全词匹配</li>
+<li>q --退出全局字段搜索面板</li>
+</ul>
+</li>
+</ul>
+<h2 id="vim-ctags-cscope">vim 代码分析工具 ctags cscope<a class="headerlink" href="#vim-ctags-cscope" title="Permanent link">&para;</a></h2>
+<p>配置了cscope 和 ctags两个功能，cscope比ctags强的功能是可以查找一个函数的调用有哪些并以列表的形式呈现出来！</p>
+<h2 id="ctags">ctags<a class="headerlink" href="#ctags" title="Permanent link">&para;</a></h2>
+<p>vim -t [funcs_name]
+ctags -R .</p>
+<h2 id="sccope">sccope<a class="headerlink" href="#sccope" title="Permanent link">&para;</a></h2>
 
 
 
@@ -1889,7 +1188,7 @@
       <nav class="md-footer__inner md-grid" aria-label="页脚" >
         
           
-          <a href="../DRM%20PRIME%20%E7%BC%93%E5%86%B2%E5%8C%BA%E5%85%B1%E4%BA%AB/" class="md-footer__link md-footer__link--prev" aria-label="上一页: DRM PRIME 缓冲区共享">
+          <a href="../tmux/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Tmux">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1899,20 +1198,20 @@
                 上一页
               </span>
               <div class="md-ellipsis">
-                DRM PRIME 缓冲区共享
+                Tmux
               </div>
             </div>
           </a>
         
         
           
-          <a href="../Overview/" class="md-footer__link md-footer__link--next" aria-label="下一页: Overview">
+          <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/AI%E7%BC%96%E8%AF%91%E5%99%A8%20%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97/" class="md-footer__link md-footer__link--next" aria-label="下一页: AI编译器 开发指南">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                Overview
+                AI编译器 开发指南
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1982,12 +1281,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "content.tooltips", "navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.footer", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.action.edit", "content.code.annotate", "content.code.copy", "content.tabs.link", "content.tooltips", "navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.footer", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
-      
-        <script src="../../../javascripts/mathjax.js"></script>
+      <script src="../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js"></script>
       
