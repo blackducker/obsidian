@@ -25,9 +25,23 @@ prefix : `Ctrl + w` 为前缀
 | N         | 第N行      |
 | 1,10      | 第 1~10 行 |
 | %         | 所有行      |
+## The Ultimate vimrc
+
+- 目录树(NERD_tree插件)
+	- ,nn --打开目录树
+	- ,nn --关闭目录树
+
+- 全局搜索字段(ack插件)
+	- ,g --打开全局字段搜索面板，默认大小写敏感，-i 不区分大小写，-w 全词匹配
+	- q --退出全局字段搜索面板
+
 ## vim 代码分析工具 ctags cscope
 
 配置了cscope 和 ctags两个功能，cscope比ctags强的功能是可以查找一个函数的调用有哪些并以列表的形式呈现出来！
 ## ctags
 vim -t [funcs_name]
+ctags -R .
+
+## sccope
+
 
